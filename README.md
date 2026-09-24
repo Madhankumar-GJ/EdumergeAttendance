@@ -16,34 +16,40 @@ EduMerge Attendance Management System is a modern web-based college management p
 
 The project focuses on building a practical administrative interface rather than a simple attendance-marking page.
 
-The system is designed around multiple college stakeholders:
+EduMerge Attendance Management System
+Advanced College Attendance & Academic Management Platform
 
-Administrators
+
+
+
+A modular React-based college management prototype connecting attendance, students, teachers, staff, academics, timetable generation, reports and notifications in a single platform.
+
+🔗 Project Links
+Resource	Link
+🌐 Live Application	Open Live Project
+💻 GitHub Repository	View Source Code
+👨‍💻 Developer GitHub	Madhankumar-GJ
+
+Note: If Vercel assigns a different production URL, replace the live application URL above with the final Vercel URL before submission.
+
+1. Project Overview
+EduMerge Attendance Management System is a frontend-focused college management prototype designed around the idea that attendance should not operate as an isolated feature.
+
+In a real college environment, attendance is closely connected to:
+
+Students
 
 Teachers
 
 Staff
 
-Students
-
-The long-term goal is to provide role-aware workflows for attendance management while connecting attendance data with academic structures and timetable information.
-
-🎯 Problem Understanding
-Traditional attendance systems often treat attendance as an isolated feature.
-
-In a college environment, attendance is connected to:
-
-Students
-
-Teachers
-
-Subjects
-
-Classes
-
 Departments
 
 Courses
+
+Classes
+
+Subjects
 
 Rooms
 
@@ -51,25 +57,48 @@ Academic years
 
 Timetables
 
-Leave requests
-
-Attendance shortage
+Leave management
 
 Reports
 
 Notifications
 
-A useful attendance platform therefore needs to understand the academic context in which attendance is recorded.
+The application therefore brings these areas together through a modular React architecture.
 
-EduMerge approaches attendance as part of a larger academic management workflow.
+2. Problem Statement
+Traditional attendance applications often focus only on:
 
-✨ Key Features
-Dashboard
-The dashboard provides a centralized overview of the system.
+Select Class
+     ↓
+Mark Attendance
+     ↓
+Save
 
-Planned/implemented dashboard capabilities include:
+This approach does not adequately represent the academic context behind attendance.
 
-Attendance overview
+EduMerge expands the workflow:
+
+Academic Structure
+        ↓
+Course → Class → Subject
+        ↓
+Teacher Assignment
+        ↓
+Timetable
+        ↓
+Attendance Session
+        ↓
+Attendance Records
+        ↓
+Analytics / Shortage
+        ↓
+Reports / Notifications
+
+This structure makes attendance part of the broader academic workflow.
+
+3. Key Features
+📊 Dashboard
+Centralized system overview
 
 Attendance statistics
 
@@ -81,12 +110,10 @@ Alerts
 
 Recent activity
 
-Role-specific dashboards
+Role-oriented dashboard structure
 
-👨‍🎓 Student Management
-Student management is designed to support:
-
-Student listing
+🎓 Student Management
+Student directory
 
 Student search
 
@@ -96,54 +123,51 @@ Student details
 
 Academic information
 
-Attendance information
+Attendance summary
+
+Attendance history
 
 Student statistics
 
-Student attendance history
-
 👨‍🏫 Teacher Management
-Teacher management includes support for:
-
 Teacher directory
 
 Teacher details
 
 Department association
 
-Assigned subjects
+Subject assignments
 
-Timetable integration
+Timetable association
 
 Attendance-related workflows
 
 👥 Staff Management
-The system also provides a dedicated staff management area for administrative and non-teaching staff.
+Staff directory
 
-📚 Academic Management
-Academic entities are separated so that attendance and timetable information can reference the correct academic context.
+Staff details
 
-Supported entities include:
+Administrative staff workflows
 
-Academic years
+Dedicated staff management area
 
-Departments
+🏫 Academic Management
+The academic structure is divided into independent entities:
 
-Courses
+Module	Purpose
+Academic Years	Manage academic sessions
+Departments	Organize institutional departments
+Courses	Manage academic programs
+Classes	Manage student groups
+Subjects	Manage academic subjects
+Rooms	Manage classrooms and resources
 
-Classes
+This structure provides the foundation for attendance and timetable relationships.
 
-Subjects
+4. Attendance Management
+Attendance is the core module of the application.
 
-Rooms
-
-This structure allows the application to grow into a more complete college information system.
-
-✅ Attendance Management
-Attendance is one of the core modules.
-
-The planned workflow supports:
-
+Supported workflows
 Mark attendance
 
 Attendance roster
@@ -154,42 +178,42 @@ Attendance history
 
 Attendance calendar
 
-Attendance summaries
+Attendance summary
 
 Attendance reports
 
-Shortage identification
+Attendance shortage
+
+Student attendance
 
 Attendance filtering
 
-Student-level attendance information
+Attendance states
+Status	Description
+🟢 Present	Student attended the session
+🔴 Absent	Student did not attend
+🟡 Late	Student arrived late
+🔵 Excused	Absence approved/excused
 
-Possible attendance states include:
+The architecture allows additional attendance states to be added later.
 
-Present
+5. Timetable Management
+The timetable module connects academic data with scheduling.
 
-Absent
+Timetable inputs
+Academic year
 
-Late
+Department
 
-Excused
+Course
 
-The architecture is designed so additional attendance states can be introduced later.
+Class
 
-🗓️ Intelligent Timetable Management
-The timetable module is designed to work together with academic data.
+Subject
 
-The generator considers inputs such as:
+Teacher
 
-Classes
-
-Subjects
-
-Teachers
-
-Rooms
-
-Academic structure
+Room
 
 Working days
 
@@ -201,24 +225,42 @@ Room availability
 
 Subject requirements
 
-The system also contains conflict-detection functionality.
+Generation workflow
+Academic Data
+      ↓
+Scheduling Inputs
+      ↓
+Constraint Validation
+      ↓
+Timetable Generation
+      ↓
+Conflict Detection
+      ↓
+Review / Edit
+      ↓
+Final Timetable
 
-Potential timetable conflicts include:
+Conflict detection
+The system is designed to identify situations such as:
 
-Teacher assigned to two classes at the same time
+Teacher assigned to multiple classes at the same time
 
 Room assigned to multiple classes
 
-Class assigned to multiple subjects in the same period
+Class assigned multiple subjects in one period
 
 Teacher availability conflicts
 
 Room availability conflicts
 
-The architecture separates timetable generation and conflict detection into utility/service layers so the algorithm can be improved independently from the UI.
+Insufficient available periods
 
-📊 Reports & Analytics
-The reporting layer is designed to support:
+Insufficient rooms
+
+The timetable generator and conflict detector are separated from the UI so the scheduling logic can evolve independently.
+
+6. Reports & Analytics
+The reporting architecture provides a foundation for:
 
 Attendance reports
 
@@ -226,80 +268,103 @@ Attendance analytics
 
 Student attendance analysis
 
-Shortage identification
+Shortage reports
 
-Data visualization
+Visual data analysis
 
 Export-oriented workflows
 
-The project contains reusable chart components for presenting analytical information.
+Reusable chart components are included for analytical dashboards.
 
-🔔 Notifications
-The notification module is intended to provide a centralized place for:
-
-Attendance alerts
-
-Shortage alerts
-
-Administrative notifications
-
-System notifications
-
-📝 Leave Management
-The system includes leave-management workflows for:
+7. Leave Management
+Leave management provides the foundation for:
 
 Leave requests
 
 Leave management
 
-Approval/rejection workflows
+Approval workflows
 
-This can later be connected directly with attendance calculation rules.
+Rejection workflows
 
-⚙️ Settings
-The settings area provides a foundation for configurable application behaviour.
+Future integration can allow approved leave to influence attendance calculations according to institutional policies.
 
-The project also supports:
+8. Notifications
+The notification module provides a centralized area for:
+
+Attendance alerts
+
+Shortage notifications
+
+Administrative notifications
+
+System notifications
+
+9. User Roles
+The architecture supports the following roles:
+
+Role	Main Responsibility
+Administrator	System and academic management
+Teacher	Classes, subjects and attendance
+Staff	Administrative operations
+Student	Personal attendance and academic information
+
+Role-aware routing and permissions can be expanded when a backend authentication layer is introduced.
+
+10. UI / UX
+The interface is designed around:
+
+Responsive layouts
+
+Desktop navigation
+
+Mobile navigation
+
+Reusable components
+
+Data tables
+
+Cards
+
+Modals
+
+Filters
+
+Empty states
+
+Charts
+
+Notifications
 
 Light theme
 
 Dark theme
 
-Persistent theme preference
+Design goals
+Minimize unnecessary navigation.
 
-🏗️ Technology Stack
-Frontend
-React
+Keep related academic data connected.
 
-JavaScript
+Make frequently used attendance actions easily accessible.
 
-HTML
+Provide clear visual feedback.
 
-CSS
+Support both desktop and mobile workflows.
 
-Tailwind CSS
+11. Technology Stack
+Technology	Purpose
+React	Frontend application
+JavaScript	Application logic
+Tailwind CSS	UI styling
+Vite	Development/build tooling
+React Router	Client-side routing
+GSAP	Advanced animations
+Anime.js	UI animations
+Lucide React	Interface icons
+Vercel	Deployment
 
-UI / Animation
-GSAP
-
-Anime.js
-
-Lucide Icons
-
-Routing
-React Router
-
-Build Tool
-Vite
-
-Deployment
-Vercel
-
-Data / State Architecture
-The current prototype uses frontend services, stores and local persistence to simulate application behaviour without requiring a backend server.
-
-🧱 Architecture
-The project follows a modular React architecture.
+12. Architecture
+The project follows a modular component-based architecture.
 
 src/
 │
@@ -345,287 +410,528 @@ src/
 │
 └── utils/
 
-Components
-Reusable UI and feature components.
+Layer responsibilities
+┌─────────────────────────────┐
+│            Pages            │
+│       Route-level UI        │
+└──────────────┬──────────────┘
+               │
+┌──────────────▼──────────────┐
+│         Components          │
+│      Reusable UI logic      │
+└──────────────┬──────────────┘
+               │
+┌──────────────▼──────────────┐
+│       Stores / Hooks        │
+│       Application State     │
+└──────────────┬──────────────┘
+               │
+┌──────────────▼──────────────┐
+│          Services           │
+│     Application Operations  │
+└──────────────┬──────────────┘
+               │
+┌──────────────▼──────────────┐
+│           Utils             │
+│ Business & validation logic │
+└──────────────┬──────────────┘
+               │
+┌──────────────▼──────────────┐
+│       Seed / Demo Data      │
+└─────────────────────────────┘
 
-Pages
-Route-level screens and workflows.
+13. Important Utility Modules
+The application separates reusable business logic into utility modules.
 
-Services
-Application-level operations and data handling.
+Utility	Responsibility
+attendanceCalculator.js	Attendance calculations
+conflictDetector.js	Timetable conflict detection
+timetableGenerator.js	Timetable generation logic
+csvUtils.js	CSV processing
+dateUtils.js	Date operations
+exportUtils.js	Data export
+formatters.js	Display formatting
+validators.js	Input validation
 
-Stores
-State management for major application domains.
+This separation makes the application easier to maintain and extend.
 
-Utils
-Reusable business logic such as:
+14. State Management
+Separate stores are maintained for major application domains.
 
-Attendance calculation
+store/
+├── appStore.js
+├── attendanceStore.js
+├── authStore.js
+├── leaveStore.js
+├── notificationStore.js
+├── settingsStore.js
+├── studentStore.js
+├── teacherStore.js
+└── timetableStore.js
 
-Conflict detection
+This prevents the entire application from depending on one large global state object.
 
-Timetable generation
-
-Validation
-
-Formatting
-
-CSV handling
-
-Export utilities
-
-Data
-Seed/demo data used by the frontend prototype.
-
-🧠 Design Approach
-The system follows a separation-of-concerns approach.
-
-Instead of putting all functionality inside individual pages, responsibilities are separated into:
-
-UI
- ↓
-Pages
- ↓
-Components
- ↓
-Stores / Services
- ↓
-Utilities
- ↓
-Data / Persistence
-
-This makes individual modules easier to replace or expand.
-
-For example, the timetable generator can eventually be replaced with a backend scheduling engine without requiring the entire timetable UI to be rewritten.
-
-🔐 Authentication & Roles
-The application architecture includes role concepts for:
-
-Administrator
-
+15. Data Flow Example
+Attendance
 Teacher
+   ↓
+Select Class
+   ↓
+Select Subject
+   ↓
+Select Session
+   ↓
+Load Student Roster
+   ↓
+Mark Attendance
+   ↓
+Validate
+   ↓
+Store Attendance
+   ↓
+Calculate Statistics
+   ↓
+Reports / Shortage / Analytics
 
-Staff
+Timetable
+Classes
+Teachers
+Subjects
+Rooms
+Availability
+Periods
+    │
+    ▼
+Timetable Generator
+    │
+    ▼
+Conflict Detector
+    │
+    ├── Conflicts Found → Review / Edit
+    │
+    └── Valid Schedule → Timetable
 
-Student
+16. Setup & Installation
+Prerequisites
+Make sure the following are installed:
 
-Role-aware routing and permissions can be expanded as backend authentication is introduced.
+Node.js
 
-For the current prototype, some authentication/data behaviour is simulated on the client side.
+npm
 
-💾 Data Persistence
-The current prototype is frontend-focused.
+Git
 
-Local storage is used where appropriate to preserve application state between browser sessions.
+Verify:
 
-This is intentional for the prototype stage because it allows the complete UI and workflow to be demonstrated without requiring a separate backend deployment.
+node --version
+npm --version
+git --version
 
-⚠️ Assumptions
-The following assumptions were made during development:
+Clone the Repository
+git clone https://github.com/Madhankumar-GJ/EdumergeAttendance.git
 
-A college has a structured academic hierarchy consisting of departments, courses, classes and subjects.
+Navigate into the project:
 
-Students belong to academic classes/courses.
+cd EdumergeAttendance
 
-Teachers can be associated with subjects and timetable slots.
+Install dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Vite will provide the local development URL.
+
+17. Production Build
+Create a production build:
+
+npm run build
+
+Preview the production build:
+
+npm run preview
+
+The production output is generated in:
+
+dist/
+
+dist/ is intentionally excluded from Git because Vercel generates it during deployment.
+
+18. Deployment
+The project is configured for Vercel deployment.
+
+GitHub
+   │
+   ▼
+Vercel
+   │
+   ├── Install dependencies
+   │
+   ├── npm run build
+   │
+   └── Deploy dist/
+
+Every new push to the connected GitHub repository can trigger a new Vercel deployment.
+
+19. Assumptions
+The prototype currently assumes:
+
+A college has departments, courses, classes and subjects.
+
+Students belong to academic classes.
+
+Teachers can be associated with subjects.
 
 Rooms have limited availability.
 
-A timetable should not assign the same teacher to multiple classes simultaneously.
+A teacher cannot teach two classes simultaneously.
 
-A timetable should not assign the same room to multiple classes simultaneously.
+A room cannot host two classes simultaneously.
 
-Attendance is recorded in the context of a class, subject and timetable/session.
+Attendance is associated with an academic session.
 
-Attendance shortage can be calculated using configurable attendance thresholds.
+Attendance shortage is based on configurable thresholds.
 
-Leave information may affect attendance calculations depending on institutional policy.
+Approved leave may affect attendance according to institutional policy.
 
-The frontend prototype can use seeded data before integration with a production backend.
+Seed data can be used during prototype development.
 
-🔄 Important Edge Cases
-The system is designed with the following edge cases in mind.
+Production persistence will eventually be handled by a backend/database.
 
+20. Validation & Edge Cases
 Attendance
 Duplicate attendance submission
-
-Attendance for a non-existent student
 
 Empty attendance roster
 
 Invalid attendance date
 
-Attendance modification after submission
+Missing student
 
 Student below attendance threshold
 
-Teacher attempting to mark attendance for an unauthorized class
+Attendance modification
+
+Unauthorized attendance operation
 
 Timetable
-Same teacher assigned to multiple classes
+Teacher double-booking
 
-Same room assigned to multiple classes
+Room double-booking
 
-Same class assigned to multiple subjects
+Class double-booking
+
+Teacher unavailable
+
+Room unavailable
 
 Insufficient rooms
 
-Insufficient available periods
+Insufficient periods
 
-Teacher unavailable during a selected period
+Impossible scheduling constraints
 
-Subject requiring more periods than available
-
-Empty timetable input
-
-Impossible timetable constraints
+Empty scheduling inputs
 
 Data
-Empty datasets
-
 Missing fields
 
-Invalid identifiers
-
 Duplicate records
+
+Invalid IDs
+
+Empty datasets
 
 Invalid academic relationships
 
 UI
-Mobile navigation
+Responsive navigation
+
+Mobile sidebar
 
 Long tables
 
 Empty states
 
-Loading states
-
 Modal interactions
 
-Dark/light theme switching
-
-Responsive layouts
-
-🧪 Validation Approach
-Validation was performed incrementally during development.
-
-The application was tested through:
-
-Vite development server
-
-Browser console
+Theme switching
 
 Route navigation
 
-Component rendering
+21. Testing & Validation Approach
+The prototype was validated incrementally during development.
 
-Manual interaction testing
+Validation methods
+Vite development server
 
-Responsive layout checks
+Production build
 
-Theme switching
+Browser developer console
+
+Route navigation
+
+Manual UI testing
+
+Responsive layout testing
+
+Theme testing
 
 Import/export verification
 
 Timetable conflict scenarios
 
-Runtime errors were investigated through browser error messages and corrected at the source.
+Runtime error investigation
 
-One example was resolving missing default exports in route-level React page modules.
+Debugging example
+During development, several route modules initially produced errors such as:
 
-Another was correcting the dashboard layout so the sidebar and header participate correctly in the page layout rather than incorrectly overlapping the main content.
+does not provide an export named 'default'
 
-⚖️ Trade-offs
-Frontend-first architecture
-Advantage
-The entire prototype can be demonstrated without setting up a backend.
+The issue was identified by examining the Vite import error and comparing route imports with the actual component exports.
 
-Trade-off
-Production authentication, authorization and persistent multi-user data are not yet backed by a server.
+The affected modules were corrected and re-tested.
 
-Local storage
-Advantage
-Simple persistence during development and demonstration.
+A separate layout issue caused the sidebar/header to overlap the main content. The layout was subsequently reorganized so that the desktop sidebar participates in the main flex layout rather than behaving as an unwanted overlay.
 
-Trade-off
-Local storage is not suitable for real multi-user institutional data.
+22. Technical Trade-offs
+Decision	Benefit	Trade-off
+React	Component reusability	More project structure than plain HTML
+Vite	Fast development/build	Requires Node.js environment
+Modular architecture	Easier maintenance	More files/abstractions
+Client-side prototype	Easy demonstration	Not suitable for production persistence
+Local storage	Simple state persistence	Not suitable for multi-user synchronization
+Client timetable generation	Demonstrable scheduling workflow	Production version may require stronger optimization
+Seed data	Fast prototype development	Not connected to institutional database
 
-Client-side timetable generation
-Advantage
-The timetable generation workflow can be demonstrated immediately in the browser.
+23. Current Prototype vs Production
+Current Prototype
+React Frontend
+      │
+      ├── Local State
+      ├── Seed Data
+      ├── Local Persistence
+      └── Client-side Business Logic
 
-Trade-off
-A production scheduling system would likely require stronger constraint solving, optimization and potentially backend processing.
+Production Architecture
+A production implementation could evolve into:
 
-Modular frontend architecture
-Advantage
-Features can be developed independently.
+React Frontend
+      │
+      ▼
+API Layer
+      │
+      ▼
+Authentication / Authorization
+      │
+      ▼
+Backend Services
+      │
+      ├── Attendance
+      ├── Students
+      ├── Teachers
+      ├── Timetable
+      ├── Reports
+      └── Notifications
+      │
+      ▼
+PostgreSQL / MySQL
 
-Trade-off
-The project has more files and abstractions than a simple single-page prototype.
+Additional production infrastructure could include:
 
-🤖 Mandatory AI / Tool Usage Report
-AI TOOL USED
+Redis
+
+Background jobs
+
+Email/SMS services
+
+Cloud storage
+
+Audit logging
+
+Monitoring
+
+24. Future Improvements
+The following features could be added in a production version:
+
+Authentication
+Secure login
+
+JWT/session authentication
+
+Role-based access control
+
+Password reset
+
+Multi-factor authentication
+
+Attendance
+QR attendance
+
+RFID integration
+
+Biometric integration
+
+Bulk attendance
+
+Attendance locking
+
+Audit trails
+
+Timetable
+Constraint optimization
+
+Automatic teacher availability analysis
+
+Room capacity constraints
+
+Elective-subject scheduling
+
+Multiple timetable versions
+
+Drag-and-drop editing
+
+Notifications
+Email notifications
+
+SMS notifications
+
+Push notifications
+
+Parent/guardian alerts
+
+Infrastructure
+PostgreSQL/MySQL
+
+REST/GraphQL API
+
+Cloud storage
+
+Background jobs
+
+Audit logging
+
+Monitoring
+
+25. Mandatory AI / Tool Usage Report
+AI Tool Used
 ChatGPT
 
-WHAT I ASKED AI TO DO
-Design the architecture and feature structure for an advanced college attendance management system.
+What I Asked AI To Do
+1. Project Architecture
+Designed the overall architecture and feature structure for an advanced college attendance management system.
 
-Generate and troubleshoot React components, routing, layouts, attendance modules and timetable-management functionality.
+2. React Development
+Generated and assisted with:
 
-Help debug runtime/build issues and improve the application's UI architecture, responsive layout and dark/light theme implementation.
+React components
 
-PROMPT THAT WAS MOST USEFUL
-"Build this complete project using React so that it will be easy to render and smart and advanced. Give all commands from creating folder structure and installing packages to dependencies and complete everything."
+Pages
 
-CODE GENERATED BY AI
-AI assistance was used across multiple parts of the frontend, including:
+Routing
 
-React page/component scaffolding
+Layouts
 
-Routing structure
+Attendance modules
 
-Attendance components
+Timetable modules
 
-Timetable components
+Dashboard modules
 
-Dashboard components
+Services
 
-Layout components
+Stores
 
-Utility/service structure
+Utility modules
 
 Styling
 
-Theme implementation
+3. Debugging & Improvement
+Assisted with:
 
-Debugging fixes
+Import/export errors
 
-CODE I MODIFIED
-The generated code was reviewed and modified during implementation, particularly around:
+React Router issues
 
-Project structure
+Missing modules
 
-React Router integration
+Sidebar layout problems
 
-Layout behaviour
-
-Sidebar positioning
-
-Header behaviour
+Responsive navigation
 
 Dark/light theme implementation
 
+UI structure
+
+Most Useful Prompt
+"Will do one thing will do this project using React so that it will be easy to render and smart and advanced."
+
+Followed by:
+
+"Give all commands from creating folder structure and installing packaging to dependencies and complete everything 100%."
+
+These prompts established the React-based architecture and development workflow.
+
+Code Generated By AI
+AI assistance was used for portions of:
+
+React application scaffolding
+
+Component structures
+
+Page structures
+
+Routing
+
+Attendance UI
+
+Timetable UI
+
+Dashboard UI
+
+State/store structure
+
+Service structure
+
+Utility functions
+
+CSS/Tailwind styling
+
+Responsive layout
+
+Theme implementation
+
+Code Modified By Me
+The generated code was reviewed and modified during implementation, including:
+
+Project structure
+
+File organization
+
 Component integration
 
-Runtime error fixes
+Route configuration
 
-UI behaviour
+Layout behavior
 
-AI OUTPUT THAT WAS WRONG
-Some generated modules initially did not match the project's actual file structure or export conventions.
+Sidebar positioning
 
-This resulted in errors such as:
+Header behavior
+
+Theme implementation
+
+UI styling
+
+Runtime error corrections
+
+Application-specific data and workflows
+
+AI Output That Was Wrong
+Some generated code initially did not match the actual project file structure or export conventions.
+
+This resulted in errors including:
 
 Failed to resolve import
 
@@ -633,113 +939,102 @@ and:
 
 does not provide an export named 'default'
 
-There was also an issue where the sidebar/header layout overlapped the main application content and the initial theme implementation changed the theme icon without correctly applying the visual theme throughout the application.
+There was also an initial layout issue where the sidebar and top navigation could overlap the main content.
 
-HOW I IDENTIFIED THE PROBLEM
-I identified these problems using:
+The first theme implementation also changed the theme icon without correctly applying the theme to the complete application interface.
 
-Vite error messages
+How I Identified The Problems
+Problems were identified through:
 
-Browser developer console
+Vite development errors
 
-Import/export errors
+Browser console errors
 
-Visual inspection of the rendered application
+React runtime errors
 
-Route navigation testing
+Inspecting the actual project directory
 
-Theme switching testing
+Route navigation
 
-Checking the actual project directory structure
+Manual UI testing
 
-HOW I FIXED IT
-I compared the generated imports against the actual project structure and corrected the relevant modules and exports.
+Dark/light theme testing
 
-For the layout issue, the application layout was reorganized so that the desktop sidebar participates in the main flex layout rather than incorrectly overlaying the content.
+Production build validation
 
-For dark mode, the theme state was connected to the root HTML element and the UI components were updated to use appropriate light/dark styles.
+How I Fixed Them
+The project structure was compared against the generated imports and route definitions.
 
-The implementation was then re-tested through the Vite development server.
+Incorrect imports and exports were corrected.
 
-🚧 Current Prototype Status
-The project is currently a frontend prototype focused on demonstrating:
+The layout was reorganized so that the desktop sidebar occupies its own layout space instead of overlaying the main application.
 
-Application architecture
+Theme handling was connected to the root HTML element so the application's light/dark styles are applied consistently.
 
-UI/UX
+The application was then re-tested through the Vite development server.
 
-Navigation
-
-Attendance workflows
-
-Academic management structure
-
-Timetable workflows
-
-Reporting
-
-Role-oriented interfaces
-
-Responsive behaviour
-
-Theme support
-
-A production version would add a backend API, database, secure authentication, authorization, audit logging and server-side validation.
-
-🔮 Future Improvements
-Potential production improvements include:
-
-PostgreSQL/MySQL database
-
-REST/GraphQL API
-
-Secure authentication
-
-Role-based access control
-
-Server-side attendance validation
-
-Real-time notifications
-
-Email/SMS integration
-
-QR-based attendance
-
-Biometric integration
-
-Advanced timetable optimization
-
-Audit logs
-
-Cloud file storage
-
-Automated scheduled reports
-
-Institution-level configuration
-
-Multi-college/tenant support
-
-👨‍💻 Developer
+26. Developer
 Madhankumar GJ
-
 Frontend / Full-Stack Developer
 
-Contact
-GitHub: https://github.com/Madhankumar-GJ
+GitHub:
+https://github.com/Madhankumar-GJ
 
-Project Repository: https://github.com/Madhankumar-GJ/EdumergeAttendance
+Project:
+https://github.com/Madhankumar-GJ/EdumergeAttendance
 
+Live Application:
+https://edumerge-attendance.vercel.app/
 
-📄 Assignment Submission
-This repository was developed as part of the Edumerge technical/product assignment.
+Add a professional email address and LinkedIn profile here before final submission if required.
 
+27. Assignment Information
+Detail	Information
+Assignment	Edumerge Technical/Product Assignment
+Submission Deadline	9:00 AM, 25 September 2026
+Submission Email	tech_interview@edumerge.com
+Source Repository	GitHub
+Deployment	Vercel
+AI Tool	ChatGPT
 
-The repository contains the source code and documentation necessary to review the prototype and understand the major architectural decisions.
+28. Submission Checklist
+Before submitting, verify:
 
-⭐ Acknowledgement
-This project was developed with AI-assisted development tools. AI-generated code was reviewed, tested, debugged and modified during implementation.
+ GitHub repository contains the complete source code
 
-The developer remains responsible for the final implementation and validation of the submitted solution.
+ node_modules/ is excluded
 
-#   E d u m e r g e A t t e n d a n c e  
- 
+ .env files are excluded
+
+ npm install works
+
+ npm run build succeeds
+
+ Vercel deployment succeeds
+
+ Live URL works
+
+ Main routes work
+
+ Attendance workflow can be demonstrated
+
+ Timetable workflow can be demonstrated
+
+ Dark/light theme works
+
+ Responsive layout works
+
+ README contains architecture and assumptions
+
+ AI usage report is completed
+
+ Developer contact information is included
+
+ Live project URL is included
+
+ GitHub repository URL is included
+
+👨‍💻 Built by Madhankumar GJ
+EduMerge Attendance Management System
+
+A modular approach to connecting college attendance with the wider academic workflow.
