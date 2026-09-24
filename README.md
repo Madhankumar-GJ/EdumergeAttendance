@@ -986,54 +986,6 @@ https://github.com/Madhankumar-GJ/EdumergeAttendance
 Live Application:
 https://edumerge-attendance.vercel.app/
 
-Add a professional email address and LinkedIn profile here before final submission if required.
-
-27. Assignment Information
-Detail	Information
-Assignment	Edumerge Technical/Product Assignment
-Submission Deadline	9:00 AM, 25 September 2026
-Submission Email	tech_interview@edumerge.com
-Source Repository	GitHub
-Deployment	Vercel
-AI Tool	ChatGPT
-
-28. Submission Checklist
-Before submitting, verify:
-
- GitHub repository contains the complete source code
-
- node_modules/ is excluded
-
- .env files are excluded
-
- npm install works
-
- npm run build succeeds
-
- Vercel deployment succeeds
-
- Live URL works
-
- Main routes work
-
- Attendance workflow can be demonstrated
-
- Timetable workflow can be demonstrated
-
- Dark/light theme works
-
- Responsive layout works
-
- README contains architecture and assumptions
-
- AI usage report is completed
-
- Developer contact information is included
-
- Live project URL is included
-
- GitHub repository URL is included
-
 👨‍💻 Built by Madhankumar GJ
 EduMerge Attendance Management System
 
